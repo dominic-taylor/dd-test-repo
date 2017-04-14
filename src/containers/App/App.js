@@ -2,10 +2,15 @@ import React from 'react'
 import {
   View,
   Image,
-  Text
+  Text,
+  Button
 } from 'react-native'
 import styles from './App.styles.js'
 import Topbar from '../../components/Topbar'
+
+const onButtonPress = () =>{
+  alert('You pressed the button!');
+}
 
 export default () => (
   <View style={styles.container}>
@@ -30,5 +35,10 @@ export default () => (
       }}>
       Welcome to this React Native Redux boiler.
     </Text>
+    <Button
+      onPress={onButtonPress}
+      title="Press Me!"
+    />
+
   </View>
 )
