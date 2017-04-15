@@ -1,10 +1,7 @@
-import {
-  createStore,
-  // applyMiddleware,
-  compose
-} from 'redux'
+import {  createStore, // applyMiddleware,
+  compose } from 'redux'
 
-import reducers from '../reducers'
+import reducers from '../reducers/index.js'
 
 export default function configureStore (initialState) {
   const middlewares = [
