@@ -11,4 +11,12 @@ const DrinkList = () => (
   </View>
 )
 
+const mapStateToProps = (state) => {
+  return {
+    timesPressed: state.times,
+    hasErrored: state.drinksReqHasErrored,
+    isLoading: state.drinksReqIsLoading,
+    drinksData: state.drinks
+  }
+}
 export default DrinkList
