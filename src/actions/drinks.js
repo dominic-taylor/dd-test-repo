@@ -1,5 +1,4 @@
 
-//These are the actions reffered to in the reducers
 export const drinksReqHasErrored = bool =>({
 	type: 'DRINKS_HAS_ERRORED',
 	hasErrored: bool
@@ -10,7 +9,6 @@ export const drinksReqIsLoading = bool => ({
 	isLoading: bool
 })
 
-// Note#123 the type value, which is invoked in the reducer...cont. in reducers/drinks.js
 
 export const drinksReqSuccess = drinks => ({
 	type: 'DRINKS_REQ_SUCCESS',

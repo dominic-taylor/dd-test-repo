@@ -17,7 +17,6 @@ export function drinksReqIsLoading(state = false, action) {
             return state;
     }
 }
-//Cont. from action/drinks,js. Note this function is called by having the case name of a differently named drinkReqSuccess func in action/drinks.js 
 export function drinks(state = [], action) {
     switch (action.type) {
         case 'DRINKS_REQ_SUCCESS':

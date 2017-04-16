@@ -9,7 +9,7 @@ import {
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import {fetchDrinksData} from '../../actions/drinks.js' // used in mapDispatchToProps
+import {fetchDrinksData} from '../../actions/drinks.js' 
 
 
 import styles from './App.styles.js'
@@ -18,7 +18,7 @@ import DrinkList from '../../components/DrinkList'
 
 class App extends Component {
   onButtonPress = () => {
-      // Must use this address when using AVD
+      // Must use this address when using AVD/Android Studio
       this.props.fetchDrinks("http://10.0.2.2:3000/drinks")
  }
 
