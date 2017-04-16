@@ -36,10 +36,13 @@
     ]
   },
   "dependencies": {
+    "express": "^4.15.2",
     "react": "^15.4.2",
     "react-native": "^0.42.3",
+    "react-native-grid-component": "^1.0.6",
     "react-redux": "^5.0.3",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "ava": "^0.18.2",

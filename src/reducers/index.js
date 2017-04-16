@@ -1,6 +1,8 @@
-import { combineReducers } from 'redux'
-import example from './example'
+import {combineReducers} from 'redux';
+import { drinksReqHasErrored, drinksReqIsLoading, drinks} from './drinks';
 
 export default combineReducers({
-  example
+	drinksReqHasErrored,
+	drinksReqIsLoading, 
+	drinks
 })

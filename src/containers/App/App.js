@@ -1,34 +1,68 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {
   View,
   Image,
-  Text
+  Text,
+  Button
 } from 'react-native'
+
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
+import {fetchDrinksData} from '../../actions/drinks.js' 
+
+
 import styles from './App.styles.js'
 import Topbar from '../../components/Topbar'
+import DrinkList from '../../components/DrinkList'
 
-export default () => (
-  <View style={styles.container}>
-    <Topbar />
-    <Image
-      style={{
-        width: 350,
-        height: 200,
-        paddingTop: 0,
-        marginTop: 0
-      }}
-      resizeMode={'cover'}
-      source={{ uri: 'https://unsplash.it/600/400/?random' }}
-    />
-    <Text
-      style={{
-        color: 'black',
-        fontSize: 24,
-        fontWeight: 'normal',
-        fontFamily: 'Helvetica Neue',
-        textAlign: 'center'
-      }}>
-      Welcome to this React Native Redux boiler.
-    </Text>
-  </View>
-)
+class App extends Component {
+  onButtonPress = () => {
+      // Must use this address when using AVD/Android Studio
+      this.props.fetchDrinks("http://10.0.2.2:3000/drinks")
+ }
+
+ render() {
+  if(this.props.drinksData.drinks){
+    return(
+      <View style={styles.container}>
+        <Topbar />
+        <DrinkList />
+      </View>
+      )
+  }
+  if(this.props.isLoading) {
+    return(
+      <View style={styles.container}>
+      <Topbar />
+      <Text style={styles.text}>Loading Data...</Text>
+    </View>
+      )
+  }
+  return (
+    <View style={styles.container}>
+      <Topbar />
+      <Button
+        onPress={this.onButtonPress}
+        title="Press Me!"
+      />
+    </View>
+    )
+  }
+ } 
+
+const mapStateToProps = (state) => {
+  return {
+    hasErrored: state.drinksReqHasErrored,
+    isLoading: state.drinksReqIsLoading,
+    drinksData: state.drinks
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchDrinks: (url) => dispatch(fetchDrinksData(url))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

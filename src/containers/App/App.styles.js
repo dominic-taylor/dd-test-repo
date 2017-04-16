@@ -4,9 +4,12 @@ export default {
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
     width: Dimensions.width,
     height: Dimensions.height
+  }, 
+  text: {
+  	fontSize: 40,
+   	fontWeight: '500',
+  	textAlign: 'center'
   }
 }
