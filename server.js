@@ -1,15 +1,10 @@
 var express = require('express')
 var app = express()
 
-// should really use fs to read this...
 var drinks = require('./exercises/1/drinks.json');
 
-//can also use this so route would be 3000/1/drinks.json
-// app.use(express.static('./exercises/1/'))
-
-
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.send('Hello World!. Check out /3000 for the bar!')
 })
 
 app.get('/drinks', function (req, res) {

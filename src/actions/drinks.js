@@ -1,12 +1,5 @@
-// export const UPDATE_DEMO = 'example/UPDATE_DEMO'
 
 //These are the actions reffered to in the reducers
-
-export const updateButtonPress = times => ({
-  type: 'UPDATE_BUTTON',
-  times
-})
-
 export const drinksReqHasErrored = bool =>({
 	type: 'DRINKS_HAS_ERRORED',
 	hasErrored: bool

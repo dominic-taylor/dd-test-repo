@@ -9,7 +9,7 @@ import {
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import {updateButtonPress, fetchDrinksData} from '../../actions/drinks.js' // used in mapDispatchToProps
+import {fetchDrinksData} from '../../actions/drinks.js' // used in mapDispatchToProps
 
 
 import styles from './App.styles.js'
@@ -53,7 +53,6 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    timesPressed: state.times,
     hasErrored: state.drinksReqHasErrored,
     isLoading: state.drinksReqIsLoading,
     drinksData: state.drinks
@@ -62,7 +61,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    buttonPress: (currentTimes) => dispatch(updateButtonPress(currentTimes)),
     fetchDrinks: (url) => dispatch(fetchDrinksData(url))
   }
 }

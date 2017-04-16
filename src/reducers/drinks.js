@@ -1,12 +1,3 @@
-export function times(state = 0, action) {
-	switch (action.type){
-		case 'UPDATE_BUTTON':
-			return action.times;
-
-		default:
-			return state;
-	}
-}
 export function drinksReqHasErrored(state = false, action) {
     switch (action.type) {
         case 'DRINKS_HAS_ERRORED':
@@ -36,24 +27,3 @@ export function drinks(state = [], action) {
             return state;
     }
 }
-
-
-// export const updateButtonPress = times => ({
-//   type: UPDATE_BUTTON,
-//   times
-// })
-
-// export const drinksReqHasErrored = bool =>({
-// 	type: DRINKS_HAS_ERRORED,
-// 	hasErrored: bool
-// })
-
-// export const drinksReqIsLoading = bool => ({
-// 	type: DRINKS_IS_LOADING,
-// 	isLoading: bool
-// })
-
-// export const drinksReqSuccess = drinks => ({
-// 	type: DRINKS_REQ_SUCCESS,
-// 	drinks
-// })
